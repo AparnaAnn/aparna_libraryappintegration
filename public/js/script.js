@@ -16,7 +16,7 @@ function validstrength(){
             case 4:
                 strength = "Good";
                 color = "darkorange";
-                pass.innerHTML = strength;
+                 pass.innerHTML = strength
                 pass.style.color = color;
                 pwd.style.border = "2px solid darkorange";
                 break;
@@ -30,7 +30,7 @@ function validstrength(){
             case 12:
                 strength = "Very Strong";
                 color = "darkgreen";
-                pass.innerHTML = strength;
+                 pass.innerHTML = strength;
                 pass.style.color = color;
                 pwd.style.border = "2px solid darkgreen";
                 break;

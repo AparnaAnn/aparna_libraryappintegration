@@ -94,7 +94,7 @@
           
           <!--/stories-->
          
-          <div class="row">   
+           <div class="row">   
               <form method="POST" action="/admin/add">
                 Title: <input type="text" name="title"><br>
                 Author: <input type="text" name="author"><br>
@@ -106,11 +106,63 @@
 
                
         
-          </div>
-        
+          <!-- </div> -->
+          <!-- <form action="/admin/add" method="POST">
+            <div class="container addbook" style="background-color: rgba(0, 0, 0, 0.884);">
+              <h3 class="addbook-heading">Add New Book</h3>
+              <div class="row addbook-form">
+                <div class="col-md-2">
+                  <label>Title</label>
+                </div>
+                <div class="col-md-10">
+                  <div class="form-group">
+                    <input type="text" id="title" class="form-control"  placeholder="Title of the book*"   name="title" style=" color: blanchedalmond;"required>
+                    <span id="error1" style="color: red;font-size: 13px;"></span>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label>Author</label>
+                </div>
+                <div class="col-md-10">
+                  <div class="form-group">
+                    <input type="text" id="name" class="form-control"onkeyup="namevald()" name="author" placeholder="Name of the author*"  style=" color: blanchedalmond;" required>
+                    <span id="error2" style="color: red;font-size: 13px;"></span>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label>Genres</label>
+                </div>
+                <div class="col-md-10">
+                  <div class="row d-flex mt-100">
+                    <div class="col-md-12 "> 
+                      <select id="choices-multiple-remove-button" class="choices" onchange="valid()" name="genre" placeholder="Click here to select the genres*" multiple style=" color: rgb(17, 15, 11);" required>
+                            <option value="Fiction" >Fiction</option>
+                            <option value="Mystery" >Mystery</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Action">Action</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Supernatural">Supernatural</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Tragedy">Tragedy</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Biography">Biography</option>
+                            <option value="Young adult fiction">Young Adult Fiction</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Childrens Literature">Childrens Literature</option>
+                            <option value="Science">Science</option>
+                            <option value="Novel">Novel</option>
+                        </select> 
+                        <span id="error3" style="color: red;font-size: 13px;"></span>
+                      </div>
+                   </div>
+                </div>
+                <button type="submit">Add</button><br>
           <hr>
           
-        
+         
           <!--/stories-->
           
           
@@ -126,7 +178,7 @@
   </div>
 </div>
                                                 
-                                                                                
+                                                                              
 <hr>
 
 <div class="container" id="footer">

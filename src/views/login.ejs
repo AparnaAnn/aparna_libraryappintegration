@@ -12,6 +12,14 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
+    <style>
+      form{
+        border: 2px solid black;
+        padding: 40px;
+        background-color: lightskyblue;
+        color: whitesmoke;
+      }
+    </style>
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -91,22 +99,25 @@
           
           
           <!--Form-->
+
           <form class="col-lg-8 upform" action="/books" onsubmit="return loginval()">
             <div class="mb-3">
-                <label for="exampleInputUserName" class="form-label">Username</label>
+                <label for="exampleInputUserName" class="form-label">USERNAME</label>
                 <input type="text" class="form-control" id="loginuser" required>
             </div>
+            <br>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
                 <input type="password" class="form-control" id="loginpass" required>
             </div>
             <br>
-            <div>
-                <a href="/signup" id="accnt">I don't have an account ! Sign Up</a>
-            </div>
-            <div class="mb-3">
+            
+            
                 <button type="submit" class="btn btn-primary" id="up-btn">LogIn</button>
-            </div>
+            
+            <div>
+              <a href="/signup" id="accnt">I don't have an account ! Sign Up</a>
+          </div>
           </form>
           
           <!--/Form-->
