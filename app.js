@@ -10,8 +10,13 @@ const nav =  [
     },
     
     {
-        link : "/admin",
+        link : "/admin/addBookPage",
         name : "Add Book "
+
+    },
+    {
+        link : "/admin/addAuthorPage",
+        name : "Add Author "
 
     },
     {

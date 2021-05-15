@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%=title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="/css/styles.css" rel="stylesheet">
+    <style>
+      /* Style inputs */
+
+  .sample{
+    padding: 40px 40px;
+  }
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+</style>
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <% for(i=0;i<nav.length-1;i++){%>
+           <li>
+            
+               <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+           </li>
+          
+        <%}%>
+        <a href="/" class="navbar-brand">Logout</a>
+      </ul>
+      <!-- <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Add Author
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <!-- <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- <div class="top-spacer"> </div> -->
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          
+          
+          <!--/stories-->
+         
+           <div class="row">   
+              <form method="POST" action="/admin/addauthor" onsubmit="alert('Author Has been added to library!');" enctype="multipart/form-data">
+                <div class="sample">
+                  <label for="name">Author Name</label>
+                  <input type="text" id="name" name="name" placeholder="Enter Author Name" required >
+    
+                
+                
+                <label for="description">Short description</label>
+                <input type="text" name="description" id="description" placeholder="Enter short description" required>
+              
+                <label for="img">Upload Author Image</label>
+                <input type="file" name="image" id="image" required accept="image/*">
+              
+                <input type="submit" value="Submit">
+              </div>
+              </form> 
+
+               
+        
+          <!-- </div> -->
+          <!-- <form action="/admin/add" method="POST">
+            <div class="container addbook" style="background-color: rgba(0, 0, 0, 0.884);">
+              <h3 class="addbook-heading">Add New Book</h3>
+              <div class="row addbook-form">
+                <div class="col-md-2">
+                  <label>Title</label>
+                </div>
+                <div class="col-md-10">
+                  <div class="form-group">
+                    <input type="text" id="title" class="form-control"  placeholder="Title of the book*"   name="title" style=" color: blanchedalmond;"required>
+                    <span id="error1" style="color: red;font-size: 13px;"></span>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label>Author</label>
+                </div>
+                <div class="col-md-10">
+                  <div class="form-group">
+                    <input type="text" id="name" class="form-control"onkeyup="namevald()" name="author" placeholder="Name of the author*"  style=" color: blanchedalmond;" required>
+                    <span id="error2" style="color: red;font-size: 13px;"></span>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label>Genres</label>
+                </div>
+                <div class="col-md-10">
+                  <div class="row d-flex mt-100">
+                    <div class="col-md-12 "> 
+                      <select id="choices-multiple-remove-button" class="choices" onchange="valid()" name="genre" placeholder="Click here to select the genres*" multiple style=" color: rgb(17, 15, 11);" required>
+                            <option value="Fiction" >Fiction</option>
+                            <option value="Mystery" >Mystery</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Action">Action</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Supernatural">Supernatural</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Tragedy">Tragedy</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Biography">Biography</option>
+                            <option value="Young adult fiction">Young Adult Fiction</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Childrens Literature">Childrens Literature</option>
+                            <option value="Science">Science</option>
+                            <option value="Novel">Novel</option>
+                        </select> 
+                        <span id="error3" style="color: red;font-size: 13px;"></span>
+                      </div>
+                   </div>
+                </div>
+                <button type="submit">Add</button><br>
+          <hr>
+          
+         
+          <!--/stories-->
+          
+          
+          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                              
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

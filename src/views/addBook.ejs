@@ -6,12 +6,44 @@
 		<title><%=title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
+    <style>
+      /* Style inputs */
+  .sample{
+    padding: 40px 40px;
+  }
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  width: 100%;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Add a background color to the submit button on mouse-over */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+    </style>
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -36,7 +68,7 @@
         <%}%>
         <a href="/" class="navbar-brand">Logout</a>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
+      <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
           <ul class="dropdown-menu" style="padding:12px;">
@@ -45,7 +77,7 @@
             </form>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     </nav>
   </div>
 </header>
@@ -58,7 +90,7 @@
           <p class="lead"></p>
         </h1>
       </div>
-      <div class="col-md-5">
+      <!-- <div class="col-md-5">
         <div class="well well-lg"> 
           <div class="row">
             <div class="col-sm-12">
@@ -67,14 +99,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div> 
   </div><!-- /cont -->
   
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="top-spacer"> </div>
+        <!-- <div class="top-spacer"> </div> -->
       </div>
     </div> 
   </div><!-- /cont -->
@@ -95,12 +127,46 @@
           <!--/stories-->
          
            <div class="row">   
-              <form method="POST" action="/admin/add">
-                Title: <input type="text" name="title"><br>
-                Author: <input type="text" name="author"><br>
-                Genre: <input type="text" name="genre"><br>
-                Image: <input type="file" name="image"><br>
-                <button type="submit">Add</button><br>
+              <form method="POST" action="/admin/addbook" onsubmit="alert('Book Has been added to library!');" enctype="multipart/form-data">
+                <div class="sample">
+                  <label for="title">Book Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter title of the Book" required>
+              
+                <label for="author">Author Name</label>
+                <input type="text" id="author" name="author" placeholder="Enter name of the Author" required>
+
+                <label for="genre">Genre</label>
+                <select name="genre" id="genre" required>
+                            <option value="Fiction" >Fiction</option>
+                            <option value="Mystery" >Mystery</option>
+                            <option value="Thriller">Thriller</option>
+                            <option value="Action">Action</option>
+                            <option value="Romance">Romance</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Supernatural">Supernatural</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Tragedy">Tragedy</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Biography">Biography</option>
+                            <option value="Young adult fiction">Young Adult Fiction</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Childrens Literature">Childrens Literature</option>
+                            <option value="Science">Science</option>
+                            <option value="Novel">Novel</option>
+                </select>
+
+                
+                <label for="description">Short description</label>
+                <input type="text" name="description" id="description" placeholder="Enter short description" required>
+              
+                <label for="img">Upload Book Image</label>
+                <input type="file" name="image" id="image" required accept="image/*">
+              
+                <input type="submit" value="Submit">
+                </div>
+                
 
               </form> 
 
@@ -166,7 +232,7 @@
           <!--/stories-->
           
           
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
         
           
         </div>

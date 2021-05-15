@@ -34,7 +34,7 @@
 
         <%}%>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
+      <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
           <ul class="dropdown-menu" style="padding:12px;">
@@ -43,7 +43,7 @@
             </form>
           </ul>
         </li>
-      </ul>
+      </ul> -->
     </nav>
   </div>
 </header>
@@ -56,7 +56,7 @@
           <p class="lead"></p>
         </h1>
       </div>
-      <div class="col-md-5">
+      <!-- <div class="col-md-5">
         <div class="well well-lg"> 
           <div class="row">
             <div class="col-sm-12">
@@ -65,14 +65,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div> 
   </div><!-- /cont -->
   
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="top-spacer"> </div>
+        <!-- <div class="top-spacer"> </div> -->
       </div>
     </div> 
   </div><!-- /cont -->
@@ -102,7 +102,9 @@
               <div class="row">
                 <div class="col-xs-9">
                   <h4><span class="label label-default"><%=book.author%></span></h4><h4>
-                  <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%> 
+                  <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%> </small>
+                    <u><h4 style="font: bold;">Description</h4></u>
+                    <h5><%= book.description%></h5>
                    
                   </h4></div>
                 <div class="col-xs-3"></div>
@@ -116,7 +118,7 @@
           <!--/stories-->
           
           
-          <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a>
+          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
         
           
         </div>
