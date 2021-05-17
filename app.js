@@ -34,6 +34,9 @@ const loginRouter = require("./src/routes/loginRoutes")(nav);
 const signupRouter = require("./src/routes/signupRoutes")(nav);
 const adminRouter = require("./src/routes/adminRoutes")(nav);
 
+// Router for author and book updations
+const updateRouter = require("./src/routes/updateroute")(nav);
+
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.static(__dirname+ '/public'));
@@ -44,6 +47,9 @@ app.use('/authors',authorsRouter);
 app.use('/login',loginRouter);
 app.use('/signup',signupRouter);
 app.use('/admin',adminRouter);
+
+//Updation
+app.use('/update',updateRouter);
 
 app.get('/',function(req,res){
     res.render("index",
