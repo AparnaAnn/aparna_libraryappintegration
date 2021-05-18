@@ -14,6 +14,7 @@ function router(nav){
         {
             nav,
             title : "LogIn",
+            error:""
         });
     });
 
@@ -23,13 +24,23 @@ function router(nav){
 
         const user = await UserModel.findOne({username});
         if(!user){
-            return res.redirect('/login');
+            return  res.render("login",
+            {
+                nav,
+                title : "LogIn",
+                error:"Incorrect Email or Password"
+            });
 
         }
         const isMatch = await bcrypt.compare(password, user.password);
 
         if(!isMatch){
-            return res.redirect('/login')
+            return  res.render("login",
+            {
+                nav,
+                title : "LogIn",
+                error:"Incorrect Email or Password"
+            });
         }
 
        req.session.isAuth =true;

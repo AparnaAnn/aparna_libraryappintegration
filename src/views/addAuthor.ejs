@@ -48,6 +48,9 @@ input[type=submit]:hover {
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner" style="background-color: #b3c7d6ff;">
+  <form id="form-id" method="post" action="/admin/logout">
+    <input type="hidden" name="your-variable-name" value="your-variable-value">
+    </form>
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -67,7 +70,7 @@ input[type=submit]:hover {
            </li>
           
         <%}%>
-        <a href="/" class="navbar-brand" style="font-family: 'Times New Roman', Times, serif;color: navy;">Logout</a>
+        <a onclick="document.getElementById('form-id').submit();" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">

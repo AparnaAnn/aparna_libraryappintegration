@@ -88,6 +88,14 @@ function router(nav){
         res.redirect('/authors');
     });
 
+    //route for hadnling logout session
+    adminRouter.post('/logout',(req,res)=>{
+        req.session.destroy((err)=>{
+            if(err) throw err;
+            res.redirect('/');
+        })
+    });
+
     return adminRouter;
 }
 
