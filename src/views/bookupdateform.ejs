@@ -57,6 +57,9 @@ input[type=submit]:hover {
       </button>
       <a href="/" class="navbar-brand">Home</a>
     </div>
+    <form id="form-id" method="post" action="/admin/logout">
+      <input type="hidden" name="your-variable-name" value="your-variable-value">
+      </form>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <% for(i=0;i<nav.length;i++){%>
@@ -64,7 +67,7 @@ input[type=submit]:hover {
             <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
           </li>
         <%}%>
-        <a href="/" class="navbar-brand">Logout</a>
+        <a onclick="document.getElementById('form-id').submit();" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -123,13 +126,14 @@ input[type=submit]:hover {
            
              <div class="sample">
               <label for="title">Book Title</label>
-            <input type="text" id="title" name="title" placeholder="Enter title of the Book" required>
+            <input type="text" id="title" name="title" placeholder="Enter title of the Book" required value="<%= book.title%>">
           
             <label for="author">Author Name</label>
-            <input type="text" id="author" name="author" placeholder="Enter name of the Author" required>
+            <input type="text" id="author" name="author" placeholder="Enter name of the Author" required value="<%=book.author%>">
 
             <label for="genre">Genre</label>
             <select name="genre" id="genre" required>
+                        <option value="<%=book.genre%>" selected><%= book.genre%></option>
                         <option value="Fiction" >Fiction</option>
                         <option value="Mystery" >Mystery</option>
                         <option value="Thriller">Thriller</option>
@@ -152,7 +156,7 @@ input[type=submit]:hover {
 
             
             <label for="description">Short description</label>
-            <input type="text" name="description" id="description" placeholder="Enter short description" required>
+            <input type="text" name="description" id="description" placeholder="Enter short description" required value="<%= book.description%>">
           
             <label for="img">Upload Book Image</label>
             <input type="file" name="image" id="image" required accept="image/*">

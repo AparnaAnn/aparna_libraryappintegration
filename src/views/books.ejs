@@ -16,6 +16,9 @@
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner" style="background-color: #b3c7d6ff;">
+  <form id="form-id" method="post" action="/admin/logout">
+    <input type="hidden" name="your-variable-name" value="your-variable-value">
+    </form>
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -27,6 +30,8 @@
       <a href="/" class="navbar-brand" style="color: navy;font-family: 'Times New Roman', Times, serif;">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
+      
+      
       <ul class="nav navbar-nav">
         <% for(i=0;i<nav.length-1;i++){%>
            <li>
@@ -35,7 +40,7 @@
            </li>
           
         <%}%>
-        <a href="/" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Logout</a>
+        <a onclick="document.getElementById('form-id').submit();" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -110,11 +115,12 @@
                   </h4></div>
 
                   <div class="col-xs-2">
-                    <form action="/update/book/<%=books[i]._id%>"><button style='font-size:12px'>Update <i class='fas fa-edit'></i></button></form>
+                    <form action="/update/book/<%=books[i]._id%>"><button style='font-size:12px'>Update <i class='fas fa-edit'></i></button></form> <br>
+                    <form action="/admin/deleteBook/<%= books[i]._id%>" method= "POST" onsubmit="alert('Book has been deleted!')"><button style='font-size:12px'>Delete <i class='fas fa-trash'></i></button></form>                
                   </div>
 
                 <div class="col-xs-3">
-                  <form action="/admin/deleteBook/<%= books[i]._id%>" method= "POST" onsubmit="alert('Book has been deleted!')"><button style='font-size:12px'>Delete <i class='fas fa-trash'></i></button></form>                
+                 
                 </div>
               </div>
               <br><br>

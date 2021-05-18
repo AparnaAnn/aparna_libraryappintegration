@@ -26,6 +26,9 @@
       </button>
       <a href="/" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Home</a>
     </div>
+    <form id="form-id" method="post" action="/admin/logout">
+      <input type="hidden" name="your-variable-name" value="your-variable-value">
+      </form>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <% for(i=0;i<nav.length-1;i++){%>
@@ -34,7 +37,7 @@
            </li>
 
         <%}%>
-        <a href="/" class="navbar-brand" style="color: navy;font-family: 'Times New Roman', Times, serif;">Logout</a>
+        <a onclick="document.getElementById('form-id').submit();" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -107,11 +110,11 @@
                   </h4></div>
                 
                   <div class="col-xs-2">
-                    <form action="/update/author/<%=authors[i]._id%>"><button style='font-size:12px'>Update <i class='fas fa-edit'></i></button></form>
+                    <form action="/update/author/<%=authors[i]._id%>"><button style='font-size:12px'>Update <i class='fas fa-edit'></i></button></form> <br>
+                    <form action="/admin/deleteAuthor/<%= authors[i]._id%>" method= "POST" onsubmit="alert('Author has been deleted!')"><button style='font-size:12px'>Delete <i class='fas fa-trash'></i></button></form>                
                   </div>
-
-                <div class="col-xs-3">
-                  <form action="/admin/deleteAuthor/<%= authors[i]._id%>" method= "POST" onsubmit="alert('Author has been deleted!')"><button style='font-size:12px'>Delete <i class='fas fa-trash'></i></button></form>                
+                   <div class="col-xs-3">
+                 
                 </div>
               </div>
               <br><br>

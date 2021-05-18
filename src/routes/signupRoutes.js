@@ -14,6 +14,7 @@ function router(nav){
         {
             nav,
             title : "SignUp",
+            error:""
         });
     });
 
@@ -23,7 +24,12 @@ function router(nav){
         if(user){
              
             
-            return res.redirect('/signup');
+            return res.render("signup",
+            {
+                nav,
+                title : "SignUp",
+                error:"!User already exists!"
+            });
         
         }
         
@@ -36,7 +42,13 @@ function router(nav){
         });
         await user.save();
 
-        res.redirect('/login');
+        return res.render("login",
+            {
+                nav,
+                title : "SignUp",
+                error:"!SignUp Successful, please log in to continue!"
+            });
+        
 
     });
 

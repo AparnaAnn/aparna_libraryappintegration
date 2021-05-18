@@ -64,7 +64,7 @@ input[type=submit]:hover {
             <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
           </li>
         <%}%>
-        <a href="/" class="navbar-brand">Logout</a>
+        <a onclick="document.getElementById('form-id').submit();" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -122,12 +122,12 @@ input[type=submit]:hover {
            <form method="POST" action="/update/author/<%=author._id%>/updated" enctype="multipart/form-data">
              <div class="sample">
               <label for="name">Author Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter Author Name" required >
+              <input type="text" id="name" name="name" placeholder="Enter Author Name" required value="<%=author.name%>">
 
             
             
             <label for="description">Short description</label>
-            <input type="text" name="description" id="description" placeholder="Enter short description" required>
+            <input type="text" name="description" id="description" placeholder="Enter short description" required value="<%=author.description%>">
           
             <label for="img">Upload Author Image</label>
             <input type="file" name="image" id="image" required accept="image/*">
