@@ -1,28 +1,19 @@
 const express = require("express");
 const booksRouter = express.Router();
 const Bookdata = require('../model/Bookdata');
+
+ const isAuth= (req,res,next)=>{
+     if(req.session.isAuth){
+         next()
+     }
+     else{
+         res.redirect('/login');
+     }
+ }
 function router(nav){
-    // var books = [
-    //     {
-    //         title: 'Tom and Jerry',
-    //         author: 'Joseph Barbera',
-    //         genre: 'Cartoon',
-    //         img: "tom.jpg"
-    //     },
-    //     {
-    //         title: 'Harry Potter',
-    //         author: 'J K Rowling',
-    //         genre: 'Fantasy Fiction',
-    //         img: "hp.jpg"  
-    //     },
-    //     {
-    //         title: 'Twilight',
-    //         author: 'Stephenie Meyer',
-    //         genre: 'Fantasy Fiction',
-    //         img: "twilight.jpg"
-    //     }
-    // ]
-    booksRouter.get('/',function(req,res){
+    
+    
+    booksRouter.get('/',isAuth,(req,res)=>{
         Bookdata.find()
         .then(function(books){
             res.render("books",

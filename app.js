@@ -1,6 +1,31 @@
 const express = require("express");
 const app = new express();
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
+const MongoDBSession = require('connect-mongodb-session')(session);
+const mongoose = require("mongoose");
+
+
+const mongoURI='mongodb://localhost:27017/library'
+
+
+mongoose.connect(mongoURI,{
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology:true,
+})
+
+.then((res) =>{
+    console.log("mongodb connected");
+});
+
+const store = new MongoDBSession({
+    uri: mongoURI,
+    collection: 'mySessions',
+});
 const port = process.env.PORT || 1978;
+
+
 const nav =  [
     {
         link :'/books',name :'Books'
@@ -19,6 +44,7 @@ const nav =  [
         name : "Add Author "
 
     },
+    
     {
         link : "/signup",
         name : "SignUp/Login"
@@ -27,25 +53,39 @@ const nav =  [
     
 
 ];
+app.use(express.urlencoded({extended:true}));
+app.use(session({
 
-const booksRouter = require('./src/routes/bookRoutes')(nav);
+    secret: 'key that will sign cookie',
+    resave: false,
+    saveUninitialized: false,
+    store: store,
+    })
+);
+
+
+
+const booksRouter = require('./src/routes/bookRoutes')(nav,);
 const authorsRouter = require('./src/routes/authorRoutes')(nav);
 const loginRouter = require("./src/routes/loginRoutes")(nav);
 const signupRouter = require("./src/routes/signupRoutes")(nav);
 const adminRouter = require("./src/routes/adminRoutes")(nav);
 
 
-app.use(express.urlencoded({extended:true}));
+
 app.use(express.static(__dirname+ '/public'));
 app.set('view engine','ejs');
 app.set('views','./src/views');
+
 app.use('/books',booksRouter);
 app.use('/authors',authorsRouter);
 app.use('/login',loginRouter);
 app.use('/signup',signupRouter);
 app.use('/admin',adminRouter);
 
-app.get('/',function(req,res){
+
+app.get('/',(req,res)=>{
+    // req.session.isAuth = true;
     res.render("index",
     {
         nav,
@@ -55,5 +95,8 @@ app.get('/',function(req,res){
 });
 
 
-app.listen(port,()=>{console.log("server Ready at" + port)});
+
+app.listen(port,()=>{console.log("server Ready at " + port)});
+
+
 

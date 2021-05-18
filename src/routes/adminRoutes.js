@@ -3,6 +3,15 @@ const adminRouter = express.Router();
 const Bookdata = require("../model/Bookdata");
 const AuthorData = require("../model/Authordata");
 
+const isAuth= (req,res,next)=>{
+    if(req.session.isAuth){
+        next()
+    }
+    else{
+        res.redirect('/login');
+    }
+}
+
 //file storage
 const multer = require('multer');
 
@@ -45,7 +54,7 @@ function router(nav){
         
     });
 
-    adminRouter.get('/addAuthorPage',function(req,res){
+    adminRouter.get('/addAuthorPage', isAuth,(req,res)=>{
         res.render('addAuthor',{
         nav,
         title:'Add Author'

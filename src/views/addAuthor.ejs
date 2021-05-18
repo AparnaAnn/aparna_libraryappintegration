@@ -42,12 +42,12 @@ input[type=submit] {
 
 /* Add a background color to the submit button on mouse-over */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: dodgerblue;
 }
 </style>
 	</head>
 	<body>
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+<header class="navbar navbar-bright navbar-fixed-top" role="banner" style="background-color: #b3c7d6ff;">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -56,18 +56,18 @@ input[type=submit]:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/" class="navbar-brand" style="font-family: 'Times New Roman', Times, serif;color: navy;">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <% for(i=0;i<nav.length-1;i++){%>
            <li>
             
-               <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+               <a href="<%=nav[i].link%>" style="color: navy;font-family: 'Times New Roman', Times, serif;"><%=nav[i].name%></a>
            </li>
           
         <%}%>
-        <a href="/" class="navbar-brand">Logout</a>
+        <a href="/" class="navbar-brand" style="font-family: 'Times New Roman', Times, serif;color: navy;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -83,7 +83,7 @@ input[type=submit]:hover {
   </div>
 </header>
 
-<div id="masthead">  
+<div id="masthead" style="background-color: #2460a7ff;">  
   <div class="container">
     <div class="row">
       <div class="col-md-7">

@@ -54,7 +54,7 @@ function validate(){
 
     // password format validation
     if (str.match(/[a-z]/g) && str.match(/[A-Z]/g) && str.match(/[0-9]/g) && str.match(/[^a-zA-Z\d]/g) && str.length >= 8){
-        alert("Your account is ready. You can LogIn now !");
+       
         return true;
     }
     else{
@@ -71,7 +71,7 @@ function loginval(){
     var loginpass = document.getElementById("loginpass");
     
     if (str1.match(/[a-z]/g) && str1.match(/[A-Z]/g) && str1.match(/[0-9]/g) && str1.match(/[^a-zA-Z\d]/g) && str1.length >= 8){
-        alert("Logged in successfully!");
+    
         return true;
     }
     else{

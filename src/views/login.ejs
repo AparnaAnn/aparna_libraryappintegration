@@ -15,14 +15,17 @@
     <style>
       form{
         border: 2px solid black;
+        margin-top: 3%;
         padding: 40px;
-        background-color: lightskyblue;
-        color: whitesmoke;
+        background-color:#c6d7eb;
+        color: black;
+        
       }
+      
     </style>
 	</head>
 	<body>
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+<header class="navbar navbar-bright navbar-fixed-top" role="banner" style="background-color: #b3c7d6ff">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -36,7 +39,7 @@
     <!-- navbar -->
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
-      <a href="/" class="navbar-brand">LibraryApp</a>
+      <a href="/" class="navbar-brand" style="color: navy; font-family: 'Times New Roman', Times, serif;">LibraryApp</a>
        <!-- <%i=nav.length-2%> 
         <li>
           <a href="<%=nav[i].link%>" id="logins1"><%=nav[i].name%></a>
@@ -56,7 +59,7 @@
   </div>
 </header>
 
-<div id="masthead">  
+<div id="masthead" style="background-color: #2460a7ff;">  
   <div class="container">
     <div class="row">
       <div class="col-md-7">
@@ -99,16 +102,18 @@
           
           
           <!--Form-->
-
-          <form class="col-lg-8 upform" action="/books" onsubmit="return loginval()">
+        
+        <div class="row">
+        
+          <form class="col-lg-8 upform" action="/login" method="POST"  onsubmit="return loginval()">
             <div class="mb-3">
                 <label for="exampleInputUserName" class="form-label">USERNAME</label>
-                <input type="text" class="form-control" id="loginuser" required>
+                <input type="text" name="username" class="form-control" id="loginuser" required style="width: 70%;">
             </div>
             <br>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">PASSWORD</label>
-                <input type="password" class="form-control" id="loginpass" required>
+                <input type="password" name="password" class="form-control" id="loginpass" required style="width: 70%;">
             </div>
             <br>
             
@@ -119,17 +124,18 @@
               <a href="/signup" id="accnt">I don't have an account ! Sign Up</a>
           </div>
           </form>
+          </div>
           
           <!--/Form-->
           
         </div>
       </div>
-                                                                                       
+    </div>                                                                                 
 	                                                
                                                       
    	</div><!--/col-12-->
   </div>
-</div>
+
                                                 
                                                                                 
 <hr>

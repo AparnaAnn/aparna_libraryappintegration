@@ -17,15 +17,16 @@
       form{
         border: 2px solid black;
         padding: 2%;
-        background-color: lightskyblue;
-        color: whitesmoke;
+        margin-top: 3%;
+        background-color: #c6d7eb;
+        color: black;
       }
      
     </style>
 	</head>
 
 	<body>
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+<header class="navbar navbar-bright navbar-fixed-top" role="banner" style="background-color: #b3c7d6ff">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -39,7 +40,7 @@
     <!-- navbar -->
     <nav class="collapse navbar-collapse" role="navigation"style="height:5%;">
       <ul class="nav navbar-nav">
-      <a href="/" class="navbar-brand">LibraryApp</a>
+      <a href="/" class="navbar-brand" style="color:navy;font-weight:inherit;font-family: 'Times New Roman', Times, serif;">LibraryApp</a>
       <!-- <%i=nav.length-2%>
         <li>
           <a href="<%=nav[i].link%>" id="logins1"><%=nav[i].name%></a>
@@ -59,7 +60,7 @@
   </div>
 </header>
 
-<div id="masthead">  
+<div id="masthead" style="background-color:#2460a7ff">  
   <div class="container">
     <div class="row">
       <div class="col-md-7">
@@ -104,39 +105,31 @@
           <!--Form-->
           
                                                                                        
-          <form action="/login" onsubmit="return validate()">
+           <form action="/signup" method="POST" class="col-lg-8 upform" onsubmit="return validate()">
             
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">First Name</label>
-                <input type="text" class="form-control" style="width: 70%;" id="inputtext" >
-              </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Last Name</label>
-                <input type="text" class="form-control" style="width: 70%" id="inputtext1" >
-              </div>
-          
-              <div class="form-group col-md-6">
+            <!-- <div class="form-row"> -->
+              
+              <div class="mb-3">
                 <label for="inputEmail4">Username</label>
-                <input type="text" class="form-control" style="width: 70%;" id="inputuser">
+                <input type="text" name="username" class="form-control" style="width: 70%;" id="inputuser" >
               </div>
-              <div class="form-group col-md-6">
+              <div class="mb-3">
+                <label for="inputEmail4">Email</label>
+                <input type="email" name="email" class="form-control" id="email" style="width: 70%;">
+              </div>
+              <div class="mb-3">
                 <label for="inputPassword4">Password</label>
-                <input type="password" class="form-control" style="width: 70%;" id="pwd"onkeyup="validstrength()" required >
+                <input type="password" name="password" class="form-control" style="width: 70%;" id="pwd"onkeyup="validstrength()" required >
                <span id="pass"></span>
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="email">
-              </div>
-            </div style="margin-top:5%">
+              <br>
             <button type="submit" class="btn btn-primary">Sign in</button>
             <div>
               <a href="/login" id="accnt">I already have an account ! Login</a>
           </div>
-          </form>                               
-                                                      
-   
+          </form>         
+
+       
                                                 
                                                                                 
 <hr>

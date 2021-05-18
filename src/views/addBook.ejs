@@ -41,12 +41,12 @@ input[type=submit] {
 
 /* Add a background color to the submit button on mouse-over */
 input[type=submit]:hover {
-  background-color: #45a049;
+  background-color: dodgerblue;
 }
     </style>
 	</head>
 	<body>
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+<header class="navbar navbar-bright navbar-fixed-top" role="banner" style="background-color: #b3c7d6ff;">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -55,18 +55,18 @@ input[type=submit]:hover {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="/" class="navbar-brand" style="font-family: 'Times New Roman', Times, serif;color: navy;">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
         <% for(i=0;i<nav.length-1;i++){%>
            <li>
             
-               <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
+               <a href="<%=nav[i].link%>" style="color: navy;font-family: 'Times New Roman', Times, serif;"><%=nav[i].name%></a>
            </li>
           
         <%}%>
-        <a href="/" class="navbar-brand">Logout</a>
+        <a href="/" class="navbar-brand" style="font-family: 'Times New Roman', Times, serif;color: navy;">Logout</a>
       </ul>
       <!-- <ul class="nav navbar-right navbar-nav">
         <li class="dropdown">
@@ -82,7 +82,7 @@ input[type=submit]:hover {
   </div>
 </header>
 
-<div id="masthead">  
+<div id="masthead" style="background-color: #2460a7ff;">  
   <div class="container">
     <div class="row">
       <div class="col-md-7">
@@ -172,67 +172,7 @@ input[type=submit]:hover {
 
                
         
-          <!-- </div> -->
-          <!-- <form action="/admin/add" method="POST">
-            <div class="container addbook" style="background-color: rgba(0, 0, 0, 0.884);">
-              <h3 class="addbook-heading">Add New Book</h3>
-              <div class="row addbook-form">
-                <div class="col-md-2">
-                  <label>Title</label>
-                </div>
-                <div class="col-md-10">
-                  <div class="form-group">
-                    <input type="text" id="title" class="form-control"  placeholder="Title of the book*"   name="title" style=" color: blanchedalmond;"required>
-                    <span id="error1" style="color: red;font-size: 13px;"></span>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <label>Author</label>
-                </div>
-                <div class="col-md-10">
-                  <div class="form-group">
-                    <input type="text" id="name" class="form-control"onkeyup="namevald()" name="author" placeholder="Name of the author*"  style=" color: blanchedalmond;" required>
-                    <span id="error2" style="color: red;font-size: 13px;"></span>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <label>Genres</label>
-                </div>
-                <div class="col-md-10">
-                  <div class="row d-flex mt-100">
-                    <div class="col-md-12 "> 
-                      <select id="choices-multiple-remove-button" class="choices" onchange="valid()" name="genre" placeholder="Click here to select the genres*" multiple style=" color: rgb(17, 15, 11);" required>
-                            <option value="Fiction" >Fiction</option>
-                            <option value="Mystery" >Mystery</option>
-                            <option value="Thriller">Thriller</option>
-                            <option value="Action">Action</option>
-                            <option value="Romance">Romance</option>
-                            <option value="Fantasy">Fantasy</option>
-                            <option value="Supernatural">Supernatural</option>
-                            <option value="Adventure">Adventure</option>
-                            <option value="Historical">Historical</option>
-                            <option value="Comedy">Comedy</option>
-                            <option value="Tragedy">Tragedy</option>
-                            <option value="Crime">Crime</option>
-                            <option value="Biography">Biography</option>
-                            <option value="Young adult fiction">Young Adult Fiction</option>
-                            <option value="Drama">Drama</option>
-                            <option value="Childrens Literature">Childrens Literature</option>
-                            <option value="Science">Science</option>
-                            <option value="Novel">Novel</option>
-                        </select> 
-                        <span id="error3" style="color: red;font-size: 13px;"></span>
-                      </div>
-                   </div>
-                </div>
-                <button type="submit">Add</button><br>
-          <hr>
-          
-         
-          <!--/stories-->
-          
-          
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
+       
         
           
         </div>
