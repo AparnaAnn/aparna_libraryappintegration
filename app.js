@@ -6,7 +6,7 @@ const MongoDBSession = require('connect-mongodb-session')(session);
 const mongoose = require("mongoose");
 
 
-const mongoURI='mongodb://localhost:27017/library'
+const mongoURI='mongodb+srv://userone:userone@cluster0.xb7wm.mongodb.net/LIBRARYAPP?retryWrites=true&w=majority'
 
 
 mongoose.connect(mongoURI,{
