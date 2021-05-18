@@ -108,6 +108,11 @@
                   <small style="font-family:courier,'new courier';" class="text-muted"><%=books[i].genre%></small> <br>
                     <h5><a href="/books/<%=books[i]._id%>" class="text-muted">Read More</a></small></h5>
                   </h4></div>
+
+                  <div class="col-xs-2">
+                    <form action="/update/book/<%=books[i]._id%>"><button style='font-size:12px'>Update <i class='fas fa-edit'></i></button></form>
+                  </div>
+
                 <div class="col-xs-3">
                   <form action="/admin/deleteBook/<%= books[i]._id%>" method= "POST" onsubmit="alert('Book has been deleted!')"><button style='font-size:12px'>Delete <i class='fas fa-trash'></i></button></form>                
                 </div>

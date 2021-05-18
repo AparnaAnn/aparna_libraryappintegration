@@ -70,9 +70,10 @@ const authorsRouter = require('./src/routes/authorRoutes')(nav);
 const loginRouter = require("./src/routes/loginRoutes")(nav);
 const signupRouter = require("./src/routes/signupRoutes")(nav);
 const adminRouter = require("./src/routes/adminRoutes")(nav);
-
-// Router for author and book updations
 const updateRouter = require("./src/routes/updateroute")(nav);
+
+
+
 
 
 
@@ -85,17 +86,12 @@ app.use('/authors',authorsRouter);
 app.use('/login',loginRouter);
 app.use('/signup',signupRouter);
 app.use('/admin',adminRouter);
-
-<<<<<<< HEAD
-
-app.get('/',(req,res)=>{
-    // req.session.isAuth = true;
-=======
-//Updation
 app.use('/update',updateRouter);
 
+
+
+
 app.get('/',function(req,res){
->>>>>>> f017dbaa3d88211bc25cd1524e64247c839b04e6
     res.render("index",
     {
         nav,
@@ -103,6 +99,7 @@ app.get('/',function(req,res){
     }
     );
 });
+
 
 
 
