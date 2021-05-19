@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const MongoDBSession = require('connect-mongodb-session')(session);
 const mongoose = require("mongoose");
-
+require('dotenv').config()
 
 const mongoURI='mongodb+srv://userone:userone@cluster0.xb7wm.mongodb.net/LIBRARYAPP?retryWrites=true&w=majority'
 
